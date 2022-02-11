@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 
+async function f() {
+  let res = await fetch(
+    'https://raw.githubusercontent.com/BrowningForce/aviasales-react/master/tickets.json'
+  )
+    .then((response) => response.json())
+    .then((data) => data.tickets.map((el) => console.log(el)));
+  // .then((response) => {
+  //   return response.json();
+  // });
+  // .then((data) => data.tickets.map((el) => console.log(el)));
+  // console.log(res);
+  return res;
+}
+console.log(f());
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div>Zdarova</div>;
 }
 
 export default App;
